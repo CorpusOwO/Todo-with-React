@@ -1,2 +1,2 @@
 # Todo-with-React
-A simple todo with React, just to practice nwn
+A simple todo with React, just for practice nwn
