@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ButtonStatus from './ButtonStatus';
 
-function FormEdit({task, isEdit, updateTask}) {
+function FormEdit({task, isEdit, updateTask, index}) {
 
     const [name, setTaskName] = useState(task.name);
     const [description, setTaskDescription] = useState(task.description);
@@ -15,7 +15,7 @@ function FormEdit({task, isEdit, updateTask}) {
     }
 
     const handleUpdateTodo = (e) => {
-        updateTask(task.id, {
+        updateTask(index, {
             name: name,
             description: description,
         })

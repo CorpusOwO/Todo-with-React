@@ -2,7 +2,24 @@ import React from 'react'
 import ButtonStatus from './ButtonStatus'
 import Task from './Task'
 
-function TableTaks({tasks, createTask}) {
+function TableTaks({tasks, setTasks}) {
+
+    const updateTask = (id, newTask) => {
+        const temp = [...tasks]
+        const item = temp.filter((task, index) => index === id);
+
+        item.name = newTask.name
+        item.description = newTask.description
+ 
+        setTasks([...temp])
+    }
+
+    const deleteTask = (id) =>{
+        const temp = tasks.filter((task, index) => index !== id)
+        setTasks([...temp]);
+    }
+
+
     if (tasks.length === 0) {
         return (
         <div className='flex  justify-center p-10 text-white'>
@@ -28,7 +45,7 @@ function TableTaks({tasks, createTask}) {
                                 </thead>
                                 <tbody>
                                     {tasks.map((task, index) => (
-                                        <Task key={index} task={task} tasks={tasks} createTask={createTask} index={index}/>
+                                        <Task key={index} task={task} updateTask={updateTask} deleteTask={deleteTask} index={index}/>
                                     ))}
                                 </tbody>
                             </table>
