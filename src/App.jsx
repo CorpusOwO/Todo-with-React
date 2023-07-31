@@ -8,14 +8,14 @@ function App() {
 
   const createTask = (task) => {
     setTasks([...tasks, task])
-    console.log(tasks)
-    console.log(task)
   }
-
+  const updateTask = (id) => {
+    
+  }
   return (
-    <div className='bg-neutral-800 w-screen h-screen'>
+    <div className='bg-neutral-800 w-screen h-screen overflow-hidden'>
       <FormTask createTask={createTask}/>
-      <TableTaks tasks={tasks}/>
+      <TableTaks tasks={tasks} createTask={setTasks}/>
     </div>
   )
 }

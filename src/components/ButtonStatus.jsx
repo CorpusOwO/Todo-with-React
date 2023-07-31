@@ -7,7 +7,7 @@ function ButtonStatus({statusTask}) {
 
 
   return (
-    <button className={status ? "bg-green-500 text-white p-2 rounded-sm" : "bg-red-500 text-white p-2 rounded-sm"}
+    <button className={status ? "bg-green-500 text-white w-20 h-9 rounded-sm" : "bg-red-500 text-white w-20 h-9 rounded-sm"}
     onClick={() => toogleStatus(status)} > 
     {status ? "Completada" : "Incompleta"} 
     </button>
